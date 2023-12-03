@@ -123,7 +123,7 @@ const Navbar = () => {
               height={1000}
               className="h-12 w-12 object-cover "
             />
-            <span className="font-semibold text-lg">Notion</span>
+            <span className="font-semibold text-lg cursor-pointer">Notion</span>
           </div>
 
           <div>
@@ -216,12 +216,12 @@ const Navbar = () => {
 
         <div className="bg--200 flex sm:flex-nowrap items-center justify-center gap-4">
           <div className="flex items-center justify-center gap-4 font-medium text-lg">
-            <span>Request a demo</span>
+            <span className="cursor-pointer">Request a demo</span>
             <Separator
               orientation="vertical"
               className=" stroke-zinc-700 text-xl h-5"
             />
-            <span>Log in</span>
+            <span className="cursor-pointer">Log in</span>
           </div>
           <div className="bg-black text-white rounded-lg cursor-pointer p-2 text-lg font-semibold">
             Get Notion Free
