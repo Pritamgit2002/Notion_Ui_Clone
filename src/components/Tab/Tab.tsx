@@ -159,7 +159,7 @@ const tabContents: { [key: string]: JSX.Element } = {
         alt="done"
         width={2000}
         height={2000}
-        className="w-full h-full object-cover   "
+        className="w-full h-full object-cover"
       />
     </div>
   ),
@@ -173,8 +173,8 @@ const Tabs = () => {
   };
 
   return (
-    <div className="w-[97vw]  2xl:w-[66vw]  mx-auto flex flex-col -mt-28 sm:-mt-12 bg--300  items-center justify-between ">
-      <div className="flex gap-4 sm:gap-8 justify-between items-center bg--400 w-full overflow-y-hidden overflow-x-auto  sm:overflow-hidden   h-44 p-4  sm:p-2  ">
+    <div className="w-[51vw]  mx-auto flex flex-col -mt-28 sm:-mt-12 bg--300  items-center justify-between ">
+      <div className="flex gap-4 sm:gap-8 justify-between items-center bg--400 w-full overflow-y-hidden overflow-x-auto  sm:overflow-hidden bg--400 h-44 p-4 sm:p-2">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -183,7 +183,7 @@ const Tabs = () => {
               activeTab === tab.id
                 ? "bg-white "
                 : "bg-neutral-100/80 rounded-xl"
-            } p-4 rounded-xl h-40 sm:h-max  w-[800px] sm:w-[270px]  shadow shadow-gray-400/80 `}
+            } p-4 rounded-xl h-40 sm:h-max  w-[800px] sm:w-[270px] bg--400  shadow shadow-gray-400/80 `}
             style={{
               WebkitTapHighlightColor: "transparent",
             }}

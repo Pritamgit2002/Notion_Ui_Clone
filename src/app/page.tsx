@@ -1,3 +1,4 @@
+import Company from "@/components/Company/Company";
 import Hero from "@/components/Hero/page";
 import Navbar from "@/components/Navbar/page";
 import Tabs from "@/components/Tab/Tab";
@@ -11,6 +12,7 @@ const Home = (props: Props) => {
       <Navbar />
       <Hero />
       <Tabs />
+      <Company />
     </div>
   );
 };

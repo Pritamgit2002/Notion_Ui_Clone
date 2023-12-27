@@ -29,7 +29,7 @@ const page = () => {
         alt="done"
         width={2000}
         height={2000}
-        className="w-[740px] h-[360px] object-contain "
+        className="w-[740px] h-[360px] object-contain"
       />
     </div>
   );
