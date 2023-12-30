@@ -10,6 +10,7 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import { type CarouselApi } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Movement = () => {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -69,18 +70,18 @@ const Movement = () => {
         </div>
       </div>
       {/* <div className="grid grid-rows-3"> */}
-      <div className="flex flex-col gap-y-10 w-[1200px] bg-green-300">
-        <div className="text-blue-400 bg-red-300 w-auto h-max  ">
-          <div className="flex items-center justify-center mx-2 gap-10 bg-cyan-300">
-            <div className="text-blue-400 w-80 pl-10 py-4 flex flex-col leading-tight rounded-xl bg-gray-200">
+      <div className="flex flex-col gap-y-10 w-[1200px] bg--300">
+        <div className="text-blue-400 bg--300 w-auto h-max  ">
+          <div className="flex items-center justify-between bg--300">
+            <div className="text-blue-400 w-96 pl-10 py-4 flex flex-col leading-tight rounded-xl bg-[#F6F5F4]">
               <div className="text-[60px] font-bold">1M+</div>
               <div className="text-black font-medium">community members</div>
             </div>
-            <div className="text-blue-400 w-80 pl-10 py-4 flex flex-col leading-tight rounded-xl bg-gray-200">
+            <div className="text-blue-400 w-96 pl-10 py-4 flex flex-col leading-tight rounded-xl bg-[#F6F5F4]">
               <div className="text-[60px] font-bold">150+</div>
               <div className="text-black font-medium">community groups</div>
             </div>
-            <div className="text-blue-400 w-80 pl-10 py-4 flex flex-col leading-tight rounded-xl bg-gray-200">
+            <div className="text-blue-400 w-96 pl-10 py-4 flex flex-col leading-tight rounded-xl bg-[#F6F5F4]">
               <div className="text-[60px] font-bold">50+</div>
               <div className="text-black font-medium">
                 community represented
@@ -90,8 +91,8 @@ const Movement = () => {
         </div>
 
         {/* <div className="text-blue-400 bg-green-300 w-auto h-40 mx-auto"> */}
-        <div className="flex items-center justify-center gap-6 bg-yellow-300">
-          <div className="bg-gray-200  flex flex-col w-[550px] h-[520px] pt-10 p-6 rounded-2xl ">
+        <div className="flex items-center justify-between gap-10 ">
+          <div className="bg-[#F6F5F4]  flex flex-col w-[600px] h-[520px] pt-10 p-6 rounded-2xl ">
             <div className="flex flex-col gap-y-2">
               <div className="text-xl font-bold">
                 An always-on support network
@@ -108,7 +109,7 @@ const Movement = () => {
               className="w-[360px] h-[400px] object-contain bg--400"
             />
           </div>
-          <div className=" bg-gray-200 w-[550px] h-[520px] pl-8 pt-9  rounded-2xl ">
+          <div className=" bg-[#F6F5F4] w-[550px] h-[520px] pl-8 pt-9  rounded-2xl ">
             <div className="flex flex-col  gap-y-[95px] ">
               <div className="flex flex-col gap-y-3">
                 <div className="text-xl font-bold">Choose your language</div>
@@ -129,63 +130,68 @@ const Movement = () => {
         </div>
         {/* </div> */}
 
-        <div className="text-black bg-green-300 w-full mx-auto">
-          <div className="flex items-center justify-between gap-6 bg-yellow-300">
-            <div className="bg-pink-200 flex items-center justify-center w-full">
+        <div className="text-black bg--800 w-full mx-auto flex items-center justify-between ">
+          <div className="flex items-center justify-between w-full bg--200 mx-auto gap-10 ">
+            <div className="bg-[#F6F5F4] flex items-center justify-center w-full  p-10 min-h-lvh rounded-2xl mx-auto ">
               <Carousel
                 opts={{
                   align: "start",
                   loop: true,
                 }}
+                plugins={[
+                  Autoplay({
+                    delay: 2000,
+                  }),
+                ]}
                 setApi={setApi}
               >
-                <CarouselContent className="bg-green-400">
-                  <CarouselItem className=" flex flex-col items-center justify-center">
+                <CarouselContent className=" h-full mx-auto">
+                  <CarouselItem className=" flex flex-col items-center justify-center w-full h-[758px] mx-auto bg--300">
                     <Image
                       src="/slider1.webp"
                       alt="done"
                       width={2000}
                       height={2000}
-                      className="w-[1000px] h-[600px] object-contain"
+                      className="w-full object-fit mx-auto"
                     />
-                    <div className="text-lg">Community meet-up in Tokyo</div>
+                    <div className="text-lg ">Community meet-up in Tokyo</div>
                   </CarouselItem>
-                  <CarouselItem className=" flex flex-col items-center justify-center">
+                  <CarouselItem className=" flex flex-col items-center justify-center w-full h-[758px] mx-auto bg--300 ">
                     <Image
                       src="/slider2.webp"
                       alt="done"
                       width={2000}
                       height={2000}
-                      className="w-[1000px] h-[600px] object-contain"
+                      className="w-full object-fit  mx-auto"
                     />
-                    <div className="text-lg">
+                    <div className="text-lg ">
                       Notion ambassador event in New York
                     </div>
                   </CarouselItem>
-                  <CarouselItem className=" flex flex-col items-center justify-center">
+                  <CarouselItem className=" flex flex-col items-center justify-center w-full h-[758px] mx-auto bg--300 ">
                     <Image
                       src="/slider3.webp"
                       alt="done"
                       width={2000}
                       height={2000}
-                      className="w-[1000px] h-[600px] object-contain"
+                      className="w-full object-fit  mx-auto"
                     />
-                    <div className="text-lg">
+                    <div className="text-lg ">
                       Sharing Notion setups in San Francisco
                     </div>
                   </CarouselItem>
-                  <CarouselItem className=" flex flex-col items-center justify-center">
+                  <CarouselItem className=" flex flex-col items-center justify-center w-full h-[758px] mx-auto  bg--300">
                     <Image
                       src="/slider4.webp"
                       alt="done"
                       width={2000}
                       height={2000}
-                      className="w-[1000px] h-[600px] object-contain"
+                      className="w-full object-fit  mx-auto"
                     />
                     <div className="text-lg">Coffee pop-up in London</div>
                   </CarouselItem>
                 </CarouselContent>
-                <div className="w-full text-center">{current}</div>
+                <div className="w-full text-center">{current} to 4 slides</div>
                 <div onClick={handleDecrement}>
                   <CarouselPrevious />
                 </div>
@@ -194,9 +200,9 @@ const Movement = () => {
                 </div>
               </Carousel>
             </div>
-            <div className="bg-orange-300 w-max relative flex  items-center justify-center">
+            <div className="bg--300 w-max relative flex  items-center justify-center">
               <div className="flex flex-col items-center justify-center gap-y-4">
-                <div className="bg-gray-200 w-96 flex flex-col gap-y-5 px-4 pt-6 pb-12 rounded-2xl">
+                <div className="bg-[#F6F5F4] w-96 flex flex-col gap-y-5 px-4 pt-6 pb-12 rounded-2xl">
                   <div className="flex items-center justify-start gap-3  w-full">
                     <Image
                       src="/a.webp"
@@ -218,7 +224,7 @@ const Movement = () => {
                   </div>
                 </div>
 
-                <div className="bg-gray-200 w-96 flex flex-col gap-y-5 px-4 pt-6 pb-12 rounded-2xl">
+                <div className="bg-[#F6F5F4] w-96 flex flex-col gap-y-5 px-4 pt-6 pb-12 rounded-2xl">
                   <div className="flex items-center justify-start gap-3  w-full">
                     <Image
                       src="/b.webp"
@@ -241,7 +247,7 @@ const Movement = () => {
                   </div>
                 </div>
 
-                <div className="bg-gray-200 w-96 flex flex-col gap-y-5 px-4 pt-6 pb-12 rounded-2xl">
+                <div className="bg-[#F6F5F4] w-96 flex flex-col gap-y-5 px-4 pt-6 pb-12 rounded-2xl">
                   <div className="flex items-center justify-start gap-3  w-full">
                     <Image
                       src="/c.webp"
