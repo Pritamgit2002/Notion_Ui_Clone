@@ -111,7 +111,7 @@ const Footer = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-y-20 bg my-20">
       <div className="flex items-start justify-center gap-28">
-        <div className="flex flex-col items-start justify-center gap-y-10 h-full bg-green-400">
+        <div className="flex flex-col items-start justify-center gap-y-10 h-full bg--400">
           <div className="flex items-center justify-center gap-3">
             <div className="font-semibold text-4xl">
               <SiNotion />

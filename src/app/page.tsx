@@ -15,7 +15,7 @@ type Props = {};
 const Home = (props: Props) => {
   return (
     <div className="flex flex-col items-center justify-center mb-10  ">
-      {/* <Navbar />
+      <Navbar />
       <Hero />
       <Tabs />
       <Company />
@@ -23,8 +23,8 @@ const Home = (props: Props) => {
       <Side />
       <Movement />
       <Endless />
-      <Footer /> */}
-      <CarouselApp />
+      <Footer />
+      {/* <CarouselApp /> */}
     </div>
   );
 };

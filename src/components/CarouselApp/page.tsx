@@ -1,15 +1,18 @@
 "use client";
 import Image from "next/image";
-
 import React, { useState, useEffect, useRef } from "react";
 
 const CarouselApp: React.FC = () => {
+  const option = ["Board", "Table", "Timeline", "Calendar", "Gallery", "List"];
+
   const [currentImage, setCurrentImage] = useState(1);
+  const [activeButton, setActiveButton] = useState<number | null>(null);
   const totalImages = 6;
   const carouselIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleButtonClick = (imageNumber: number) => {
     setCurrentImage(imageNumber);
+    setActiveButton(imageNumber);
     if (carouselIntervalRef.current) {
       clearInterval(carouselIntervalRef.current);
     }
@@ -18,7 +21,8 @@ const CarouselApp: React.FC = () => {
   useEffect(() => {
     carouselIntervalRef.current = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage % totalImages) + 1);
-    }, 1000);
+      setActiveButton(null); // Reset active button after each interval
+    }, 2000);
 
     return () => {
       if (carouselIntervalRef.current) {
@@ -28,21 +32,28 @@ const CarouselApp: React.FC = () => {
   }, []);
 
   return (
-    <div className=" flex flex-col items-center justify-center">
+    <div>
       <h1>Image Carousel</h1>
-      <div>{currentImage}</div>
       <div>
-        <Image
-          src={`/pro${currentImage}.jpg`}
+        <img
+          src={`/col${currentImage}.png`}
           alt={`Image ${currentImage}`}
-          width={80000}
-          height={80000}
-          className="w-[800px] h-[600px] object-contain"
+          style={{ maxWidth: "50%" }}
         />
       </div>
-      <div className="flex items-center justify-center gap-10 text-2xl font-bold">
+      <div className={`space-x-10 `}>
         {[...Array(totalImages)].map((_, index) => (
-          <button key={index} onClick={() => handleButtonClick(index + 1)}>
+          <button
+            key={index}
+            onClick={() => handleButtonClick(index + 1)}
+            className={`bg-${
+              activeButton === index + 1 ? "red" : "blue"
+            }-500 text-${
+              activeButton === index + 1 ? "blue" : "gray"
+            }-400 border-4 border-${
+              activeButton === index + 1 ? "blue" : "gray"
+            }-400 font-bold py-2 px-4 bg-yellow-400 `}
+          >
             Show Image {index + 1}
           </button>
         ))}
