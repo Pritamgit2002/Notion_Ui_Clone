@@ -8,7 +8,7 @@ import Endless from "@/components/Endless/page";
 import Footer from "@/components/Footer/Footer";
 import Powerful from "@/components/Powerful/page";
 import Side from "@/components/Side/page";
-import CarouselApp from "@/components/CarouselApp/page";
+//import CarouselApp from "@/components/CarouselApp/page";
 
 type Props = {};
 
