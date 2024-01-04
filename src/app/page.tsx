@@ -14,19 +14,22 @@ type Props = {};
 
 const Home = (props: Props) => {
   return (
-    <div className="flex flex-col items-center justify-center mb-10  ">
-      <Navbar />
-      <Hero />
-      <Tabs />
-      <Company />
+    <div className="flex flex-col items-center justify-center mb-10 gap-y-6 ">
+      {/* <Navbar />*/}
+      {/* <Hero /> */}
+      {/* <Tabs /> */}
+      {/* <Company /> */}
       <Powerful />
-      <Side />
-      <Movement />
-      <Endless />
-      <Footer />
+      {/* <Side />
+      <Movement /> */}
+      {/* <Endless />  Done it */}
+      {/* <Footer /> */}
       {/* <CarouselApp /> */}
     </div>
   );
 };
 
 export default Home;
+//Hero -> Done
+//Powerful -> Done
+// Endless -> Done

@@ -10,8 +10,9 @@ const page = () => {
       </div>
 
       <div className="flex flex-col items-center mt-4 gap-y-5">
-        <span className=" text-2xl sm:text-3xl text-center font-medium sm:font-semibold w-[300px] sm:w-auto">
-          Notion is the connected workspace where better, faster work happens.
+        <span className=" text-2xl xl:text-3xl text-center font-medium xl:font-semibold  md:mx-40  w-[300px] sm:w-auto">
+          Your workspace to write, organize, and collaborate. With AI by your
+          side.
         </span>
         <div className="bg-black hover:bg-slate-800 px-4 py-2 rounded-lg text-white flex items-center justify-center gap-2 font-bold text-lg cursor-pointer">
           <span className="">Get Notion free</span>
@@ -29,7 +30,7 @@ const page = () => {
         alt="done"
         width={2000}
         height={2000}
-        className="w-[740px] h-[360px] object-contain"
+        className=" sm:w-[610px] xl:w-[740px] sm:h-[300px] xl:h-[360px] object-contain"
       />
     </div>
   );

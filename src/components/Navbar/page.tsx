@@ -216,12 +216,16 @@ const Navbar = () => {
 
         <div className="bg--200 flex sm:flex-nowrap items-center justify-center gap-4">
           <div className="flex items-center justify-center gap-4 font-medium text-lg">
-            <span className="cursor-pointer">Request a demo</span>
+            <span className="cursor-pointer px-3 py-1 hover:bg-gray-200 rounded-lg">
+              Request a demo
+            </span>
             <Separator
               orientation="vertical"
               className=" stroke-zinc-700 text-xl h-5"
             />
-            <span className="cursor-pointer">Log in</span>
+            <span className="cursor-pointer px-3 py-1 hover:bg-gray-200 rounded-lg">
+              Log in
+            </span>
           </div>
           <div className="bg-black text-white rounded-lg cursor-pointer p-2 text-lg font-semibold">
             Get Notion Free
@@ -280,7 +284,7 @@ const Navbar = () => {
               </a>
               <FaAngleRight />
             </div>
-            <div className="w-full flex items-center justify-between pb-3 border-b  border-black">
+            <div className="w-full flex items-center justify-between border-b  border-black">
               <a className="text-gray-800 font-bold text-lg" href="#">
                 Request a demo
               </a>
