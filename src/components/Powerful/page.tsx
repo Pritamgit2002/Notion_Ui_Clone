@@ -93,7 +93,7 @@ const Powerful = () => {
 
       <div className="flex flex-col sm:flex-row  items-center justify-center gap-6 ">
         <div className="rounded-2xl flex flex-col gap-y-10 w-[380px]  sm:w-80 xl:w-[550px] pt-8 pl-8 bg-[#F6F5F4] h-auto sm:h-[455px] xl:h-auto ">
-          <div className="flex flex-col gap-y-4 bg-green-400 ">
+          <div className="flex flex-col gap-y-4 ">
             <div className="text-[#0A85D1] text-4xl">
               <LuEye />
             </div>
@@ -119,7 +119,7 @@ const Powerful = () => {
         </div>
 
         <div className="rounded-2xl flex flex-col gap-y-10 w-[380px] sm:w-80 xl:w-[550px] h-auto sm:h-[455px] xl:h-auto pt-8 pl-8 bg-[#F6F5F4] ">
-          <div className="flex flex-col gap-y-4  bg-green-400">
+          <div className="flex flex-col gap-y-4  ">
             <div className="text-[#0A85D1] text-4xl">
               <IoColorPaletteOutline />
             </div>

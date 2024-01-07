@@ -110,8 +110,8 @@ const Footer = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-20 bg my-20 ">
-      <div className="flex items-start justify-center gap-28">
-        <div className="flex flex-col items-start justify-center gap-y-10 h-full bg--400">
+      <div className="flex flex-col xl:flex-row items-start justify-center gap-0 xl:gap-60 ">
+        <div className="flex flex-col items-start justify-center gap-y-12 h-full w-full ">
           <div className="flex items-center justify-center gap-3">
             <div className="font-semibold text-4xl">
               <SiNotion />
@@ -120,13 +120,13 @@ const Footer = () => {
           </div>
           <div className="flex items-center justify-center gap-4 text-2xl text-gray-500 ">
             <FaInstagram className="hover:text-black cursor-pointer" />
-            <FaTwitter className="hover:text-cyan-500 cursor-pointer" />
-            <FaLinkedinIn className="hover:text-cyan-700 cursor-pointer" />
-            <FaFacebook className="hover:text-blue-600 cursor-pointer" />
-            <FaYoutube className="hover:text-red-500 cursor-pointer" />
+            <FaTwitter className="hover:text-[#1DA1F2] cursor-pointer" />
+            <FaLinkedinIn className="hover:text-[#0A66C2] cursor-pointer" />
+            <FaFacebook className="hover:text-[#1877F2] cursor-pointer" />
+            <FaYoutube className="hover:text-[#CD201F] cursor-pointer" />
           </div>
 
-          <div className="bg-red-200 h-80">
+          {/* <div className="bg-red-200 h-80">
             <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild></PopoverTrigger>
               <PopoverContent className="w-[200px] p-0">
@@ -158,11 +158,11 @@ const Footer = () => {
                 </Command>
               </PopoverContent>
             </Popover>
-          </div>
+          </div> */}
         </div>
 
-        <div className="space-y-10">
-          <div className="flex items-start justify-center  gap-40">
+        <div className="space-y-20 ">
+          <div className="hidden xl:flex items-start justify-center gap-56">
             <div className="flex flex-col gap-y-10">
               <div>
                 <div className="text-xl font-bold pb-2">Product</div>
@@ -175,7 +175,7 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                <div className="text-xl font-bold pb-2">Product</div>
+                <div className="text-xl font-bold pb-2">Solutions</div>
                 <div className="flex flex-col gap-y-1 text-lg text-gray-400 font-medium ">
                   {solutions.map((item) => (
                     <div className="hover:underline hover:text-cyan-400 cursor-pointer w-max">
@@ -186,7 +186,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-y-10">
+            <div className="flex flex-col gap-y-10 ">
               <div>
                 <div className="text-xl font-bold pb-2">Download</div>
                 <div className="flex flex-col gap-y-1 text-lg text-gray-400 font-medium ">
@@ -243,8 +243,86 @@ const Footer = () => {
             </div>
           </div>
 
+          <div className="flex xl:hidden items-start justify-center gap-6 sm:gap-60">
+            <div className="flex flex-col gap-y-10">
+              <div>
+                <div className="text-xl font-bold pb-2">Product</div>
+                <div className="flex flex-col gap-y-1 text-base text-gray-400 font-medium ">
+                  {product.map((item) => (
+                    <div className="hover:underline hover:text-cyan-400 cursor-pointer w-max">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="text-xl font-bold pb-2">Solutions</div>
+                <div className="flex flex-col gap-y-1 text-base text-gray-400 font-medium ">
+                  {solutions.map((item) => (
+                    <div className="hover:underline hover:text-cyan-400 cursor-pointer w-max">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="text-xl font-bold pb-2">Download</div>
+                <div className="flex flex-col gap-y-1 text-base text-gray-400 font-medium ">
+                  {download.map((item) => (
+                    <div className="hover:underline hover:text-cyan-400 cursor-pointer w-max">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="text-xl font-bold pb-2">Build</div>
+                <div className="flex flex-col gap-y-1 text-base text-gray-400 font-medium ">
+                  {build.map((item) => (
+                    <div className="hover:underline hover:text-cyan-400 cursor-pointer w-max">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-y-10 ">
+              <div>
+                <div className="text-xl font-bold pb-2">Learn</div>
+                <div className="flex flex-col gap-y-1 text-base text-gray-400 font-medium ">
+                  {learn.map((item) => (
+                    <div className="hover:underline hover:text-cyan-400 cursor-pointer w-max">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="text-xl font-bold pb-2">Get started</div>
+                <div className="flex flex-col gap-y-1 text-base text-gray-400 font-medium ">
+                  {get.map((item) => (
+                    <div className="hover:underline hover:text-cyan-400 cursor-pointer w-max">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="text-xl font-bold pb-2">Resources</div>
+                <div className="flex flex-col gap-y-1 text-base text-gray-400 font-medium ">
+                  {resources.map((item) => (
+                    <div className="hover:underline hover:text-cyan-400 cursor-pointer w-max">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="w-full space-y-3">
-            <div className="text-md w-max cursor-pointer font-medium hover:border-b border-blue-400">
+            <div className="text-md w-max cursor-pointer font-medium hover:border-b border-blue-400 leading-4">
               Do Not Sell or Share My Info
             </div>
             <div className="text-md font-medium text-gray-400">

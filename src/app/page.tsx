@@ -19,9 +19,9 @@ const Home = (props: Props) => {
       {/* <Hero /> */}
       {/* <Tabs /> */}
       {/* <Company /> */}
-      <Powerful />
-      {/* <Side />
-      <Movement /> */}
+      {/* <Powerful /> */}
+      {/* <Side />*/}
+      {/* <Movement /> */}
       {/* <Endless />  Done it */}
       {/* <Footer /> */}
       {/* <CarouselApp /> */}
@@ -32,4 +32,6 @@ const Home = (props: Props) => {
 export default Home;
 //Hero -> Done
 //Powerful -> Done
-// Endless -> Done
+//Endless -> Done
+//Movement -> Done [Not the Image(avatars)]
+//Footer -> Done
