@@ -19,9 +19,9 @@ const Home = (props: Props) => {
       <Tabs />
       <Company />
       <Powerful />
-      {/* <Side />*/}
-      {/* <Movement /> */}
-      {/* <Endless /> */}
+      <Side />
+      <Movement />
+      <Endless />
       {/* <CarouselApp /> */}
     </div>
   );
