@@ -15,15 +15,13 @@ type Props = {};
 const Home = (props: Props) => {
   return (
     <div className="flex flex-col items-center justify-center mb-10 gap-y-6 ">
-      {/* <Navbar />*/}
-      {/* <Hero /> */}
-      {/* <Tabs /> */}
-      {/* <Company /> */}
-      {/* <Powerful /> */}
+      <Hero />
+      <Tabs />
+      <Company />
+      <Powerful />
       {/* <Side />*/}
       {/* <Movement /> */}
-      {/* <Endless />  Done it */}
-      {/* <Footer /> */}
+      {/* <Endless /> */}
       {/* <CarouselApp /> */}
     </div>
   );

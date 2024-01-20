@@ -16,6 +16,9 @@ import Link from "next/link";
 import { IoMenuOutline } from "react-icons/io5";
 import { RxCross1 } from "react-icons/rx";
 import { FaAngleRight } from "react-icons/fa";
+import { useConvexAuth } from "convex/react";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { Spinner } from "../spinner";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -88,6 +91,7 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem";
 
 const Navbar = () => {
+  const { isAuthenticated, isLoading } = useConvexAuth();
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -223,12 +227,39 @@ const Navbar = () => {
               orientation="vertical"
               className=" stroke-zinc-700 text-xl h-5"
             />
-            <span className="cursor-pointer px-3 py-1 hover:bg-gray-200 rounded-lg">
-              Log in
-            </span>
-          </div>
-          <div className="bg-black text-white rounded-lg cursor-pointer p-2 text-lg font-semibold">
-            Get Notion Free
+            {isLoading && (
+              <>
+                <Spinner />
+              </>
+            )}
+            {!isAuthenticated && !isLoading && (
+              <>
+                <div className="cursor-pointer px-3 py-1 hover:bg-gray-200 rounded-lg">
+                  <SignInButton>
+                    <div>Log In</div>
+                  </SignInButton>
+                </div>
+                <div>
+                  <div className="bg-black text-white rounded-lg cursor-pointer p-2 text-lg font-semibold">
+                    <SignInButton>
+                      <div>Get Notion Free</div>
+                    </SignInButton>
+                  </div>
+                </div>
+              </>
+            )}
+            {isAuthenticated && !isLoading && (
+              <>
+                <div className="flex items-center justify-center gap-5  ">
+                  <SignInButton>
+                    <Link href="/">Enter Jotion</Link>
+                  </SignInButton>
+                  <div className=" scale-125 ">
+                    <UserButton afterSignOutUrl="/" />
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -251,7 +282,7 @@ const Navbar = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 h-full bg-white  overflow-y-hidden  mt-16 ">
+        <div className="md:hidden fixed inset-0 h-full bg-white z-50 overflow-y-hidden mt-16 scroll-my-20 ">
           <div className="flex justify-end p-4"></div>
           <div className="flex flex-col items-center space-y-12 px-5">
             <div className="w-full flex items-center justify-between pb-3 border-b  border-black">

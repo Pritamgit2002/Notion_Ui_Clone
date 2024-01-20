@@ -1,8 +1,15 @@
+"use client";
+import { useConvexAuth } from "convex/react";
 import Image from "next/image";
 import React from "react";
 import { MdArrowForward } from "react-icons/md";
+import { Spinner } from "../spinner";
+import { SignInButton } from "@clerk/clerk-react";
+import Link from "next/link";
 
 const page = () => {
+  const { isAuthenticated, isLoading } = useConvexAuth();
+
   return (
     <div className="bg--300 mt-16 pt-8 flex flex-col items-center justify-center">
       <div className=" flex bg--300 w-[300px] sm:w-[690px] leading-tight sm:leading-[75px] bg--300 items-center justify-center mx-auto text-[42px] sm:text-[65px] font-bold  text-center">
@@ -14,13 +21,33 @@ const page = () => {
           Your workspace to write, organize, and collaborate. With AI by your
           side.
         </span>
-        <div className="bg-black hover:bg-slate-800 px-4 py-2 rounded-lg text-white flex items-center justify-center gap-2 font-bold text-lg cursor-pointer">
-          <span className="">Get Notion free</span>
+        {isLoading && (
+          <>
+            <Spinner size="lg" />
+          </>
+        )}
+        {!isAuthenticated && !isLoading && (
+          <SignInButton>
+            <div className="bg-black hover:bg-slate-800 px-4 py-2 rounded-lg text-white flex items-center justify-center gap-2 font-bold text-lg cursor-pointer">
+              <span className="">Get Notion free</span>
 
-          <div className="text-2xl">
-            <MdArrowForward />
-          </div>
-        </div>
+              <div className="text-2xl">
+                <MdArrowForward />
+              </div>
+            </div>
+          </SignInButton>
+        )}
+        {isAuthenticated && !isLoading && (
+          <Link href="/docs">
+            <div className="bg-black hover:bg-slate-800 px-4 py-2 rounded-lg text-white flex items-center justify-center gap-2 font-bold text-lg cursor-pointer">
+              <span className="">Enter Notion</span>
+
+              <div className="text-2xl">
+                <MdArrowForward />
+              </div>
+            </div>
+          </Link>
+        )}
       </div>
 
       <Image
