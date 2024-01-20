@@ -1,11 +1,9 @@
 import Company from "@/components/Company/Company";
 import Hero from "@/components/Hero/page";
-import Navbar from "@/components/Navbar/page";
 import Tabs from "@/components/Tab/Tab";
-import Movement from "@/components/Movement/page";
+// import Movement from "@/components/Movement/page";
 import React from "react";
 import Endless from "@/components/Endless/page";
-import Footer from "@/components/Footer/Footer";
 import Powerful from "@/components/Powerful/page";
 import Side from "@/components/Side/page";
 //import CarouselApp from "@/components/CarouselApp/page";
@@ -20,7 +18,7 @@ const Home = (props: Props) => {
       <Company />
       <Powerful />
       <Side />
-      <Movement />
+      {/* <Movement /> */}
       <Endless />
       {/* <CarouselApp /> */}
     </div>
