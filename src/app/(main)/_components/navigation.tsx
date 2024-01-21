@@ -6,10 +6,13 @@ import { FaAngleDoubleLeft } from "react-icons/fa";
 import { useMediaQuery } from "usehooks-ts";
 import { GiHamburgerMenu } from "react-icons/gi";
 import UserItem from "./user-Item";
+import { useQuery } from "convex/react";
+import { api } from "../../../../convex/_generated/api";
 
 export const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const documents = useQuery(api.documents.get);
 
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
@@ -109,7 +112,10 @@ export const Navigation = () => {
           <UserItem/>
         </div>
         <div className="mt-4">
-          <p>Documents</p>
+          {documents?.map((document) => (
+            <p key={document._id} >{document.title}</p>
+
+          ))}
         </div>
         <div
           onMouseDown={handleMouseDown}
