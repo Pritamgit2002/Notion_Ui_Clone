@@ -3,7 +3,7 @@ import { useConvexAuth } from "convex/react";
 import Image from "next/image";
 import React from "react";
 import { MdArrowForward } from "react-icons/md";
-import { Spinner } from "../spinner";
+import { Spinner } from "../../../components/spinner";
 import { SignInButton } from "@clerk/clerk-react";
 import Link from "next/link";
 

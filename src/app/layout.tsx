@@ -22,13 +22,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ConvexClientProvider>
-          <Navbar/>
-
-        {children}
-        <Footer/>
+          <div className="flex flex-col">
+            {/* <Navbar /> */}
+            {children}
+            {/* <Footer /> */}
+          </div>
         </ConvexClientProvider>
-        </body>
-        
+      </body>
     </html>
   );
 }

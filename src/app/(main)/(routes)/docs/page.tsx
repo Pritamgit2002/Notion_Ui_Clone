@@ -5,7 +5,7 @@ type Props = {}
 
 const docs = (props: Props) => {
   return (
-    <div className='w-full bg-red-400 '>dhgasvcjvajcvjacocs</div>
+    <div className='w-full bg-red-400 h-full '>dhgasvcjvajcvjacocs</div>
   )
 }
 
