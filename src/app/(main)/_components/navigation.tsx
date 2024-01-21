@@ -6,13 +6,17 @@ import { FaAngleDoubleLeft } from "react-icons/fa";
 import { useMediaQuery } from "usehooks-ts";
 import { GiHamburgerMenu } from "react-icons/gi";
 import UserItem from "./user-Item";
-import { useQuery } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
+import { PlusCircle, Search, Settings } from "lucide-react";
+import { Item } from "./item";
+import { toast } from "sonner";
 
 export const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const documents = useQuery(api.documents.get);
+  const create = useMutation(api.documents.create);
 
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
@@ -92,6 +96,15 @@ export const Navigation = () => {
     }
   };
 
+  const handleCreate = () => {
+    const promise = create({title:"Untitled"});
+    toast.promise(promise,{
+      loading:"Creating a new note...",
+      success:"New note created!",
+      error:"Failed to create...",
+    });
+  };
+
   return (
     <>
       <aside
@@ -110,6 +123,22 @@ export const Navigation = () => {
         </div>
         <div>
           <UserItem/>
+          <Item 
+            onClick={()=>{}}
+            label="Search" 
+            icon={Search}
+            isSearch  
+          />
+          <Item 
+            onClick={()=>{}}
+            label="Settings" 
+            icon={Settings}  
+          />
+          <Item 
+            onClick={()=>handleCreate()}
+            label="New Page" 
+            icon={PlusCircle}  
+          />
         </div>
         <div className="mt-4">
           {documents?.map((document) => (
