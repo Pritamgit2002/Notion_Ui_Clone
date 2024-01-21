@@ -1,10 +1,11 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { ElementRef, useRef, useState } from "react";
+import { ElementRef, useEffect, useRef, useState } from "react";
 import { FaAngleDoubleLeft } from "react-icons/fa";
 import { useMediaQuery } from "usehooks-ts";
 import { GiHamburgerMenu } from "react-icons/gi";
+import UserItem from "./user-Item";
 
 export const Navigation = () => {
   const pathname = usePathname();
@@ -15,6 +16,20 @@ export const Navigation = () => {
   const navbarRef = useRef<ElementRef<"div">>(null);
   const [isResetting, setIsResetting] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(isMobile);
+
+  useEffect(() => {
+    if (isMobile) {
+      collapse();
+    } else {
+      resetWidth();
+    }
+  }, [isMobile]);
+
+  useEffect(() => {
+    if(isMobile){
+      collapse();
+    }
+  },[pathname,isMobile]);
 
   const handleMouseDown = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
@@ -32,7 +47,7 @@ export const Navigation = () => {
     let newWidth = event.clientX;
 
     if (newWidth < 240) newWidth = 240;
-    if (newWidth > 480) newWidth = 480;
+    if (newWidth > 500) newWidth = 500;
 
     if (sidebarRef.current && navbarRef.current) {
       sidebarRef.current.style.width = `${newWidth}px`;
@@ -85,13 +100,13 @@ export const Navigation = () => {
         )}
       >
         <div
-          className="text-4xl text-muted-foreground rounded-sm hover:bg-neutral-300 absolute top-3 right-4 opacity-0 group-hover/sidebar:opacity-100 cursor-pointer p-1"
+          className="text-4xl text-muted-foreground rounded-sm hover:bg-neutral-300 absolute top-80 right-4 opacity-0 group-hover/sidebar:opacity-100 cursor-pointer p-1"
           onClick={() => collapse()}
         >
           <FaAngleDoubleLeft />
         </div>
         <div>
-          <p>Action items</p>
+          <UserItem/>
         </div>
         <div className="mt-4">
           <p>Documents</p>
@@ -116,7 +131,7 @@ export const Navigation = () => {
           {isCollapsed && (
             <div className="text-2xl text-black text-muted-foreground bg-blue-400 cursor-pointer w-max ">
               {isCollapsed && (
-                <div>
+                <div onClick={() => resetWidth()}>
                   <GiHamburgerMenu />
                 </div>
               )}

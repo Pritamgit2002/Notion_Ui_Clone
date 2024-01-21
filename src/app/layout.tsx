@@ -5,6 +5,7 @@ import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import { ConvexHttpClient } from "convex/browser";
 import Navbar from "@/components/Navbar/page";
 import Footer from "@/components/Footer/Footer";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <ConvexClientProvider>
           <div className="flex flex-col">
             {/* <Navbar /> */}
+            <Toaster position="bottom-center"/>
             {children}
             {/* <Footer /> */}
           </div>
