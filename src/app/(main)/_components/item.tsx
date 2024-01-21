@@ -35,14 +35,14 @@ export const Item = ({
       role="button"
       style={{ paddingLeft: level ? `${level * 12 + 12}px` : "12px" }}
       className={cn(
-        "group min-h-[27px] text-sm py-1 pr-3 w-full hover:bg-primary/5 flex items-center justify-center text-muted-foreground font-medium",
-        active && "bg-primary/5 text-primary "
+        "group min-h-[27px] text-sm py-1 pr-3 w-full hover:bg-primary/5 flex items-center justify-start text-muted-foreground font-medium gap-y-2 ",
+        active && "bg-primary/5 text-primary  "
       )}
     >
       {!!id && (
         <div
           role="button"
-          className="h-full rounded-sm hover:bg-neutral-300 mr-1"
+          className="h-full rounded-sm hover:bg-neutral-300 mr-1 bg-blue-400"
           onClick={() => {}}
         >
           <ChevronIcon className="h-4 w-4 shrink-0 text-muted-foreground/50" />
@@ -52,7 +52,7 @@ export const Item = ({
       {documentIcon ? (
         <div className="shrink-0 mr-2 text-[18px] ">{documentIcon}</div>
       ) : (
-        <Icon className="shrink-0 h-[18px] mr-2 text-muted-foreground" />
+        <Icon className="shrink-0 h-[18px] mr-2 text-muted-foreground " />
       )}
 
       <span className="truncate">{label}</span>
